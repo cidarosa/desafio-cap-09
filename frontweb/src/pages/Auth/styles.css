@@ -1,7 +1,9 @@
 .home-container {
+  display: flex;
+  flex-direction: row;
   padding: 10px;
   font-size: 20px;
-  color: #FFF;
+  color: #fff;
   text-align: center;
   border: 1px solid red;
 }
@@ -20,21 +22,21 @@
 }
 
 .home-content-container p {
-    width: 260px;
-    font-size: 0.6em;
-    margin-bottom: 30px;
-  }
+  width: 260px;
+  font-size: 0.6em;
+  margin-bottom: 30px;
+}
 
-  .home-image-container {
-    padding: 50px 15px;
-    border: 1px solid white
-  }
-  .home-image-container svg {
-    width: 100%;
-    height: auto;
-  }
+.home-image-container {
+  padding: 50px 15px;
+  border: 1px solid white;
+}
+.home-image-container svg {
+  width: 100%;
+  height: auto;
+}
 
-  .home-login-card{
-    width: 260px;
-    border: 1px solid white
-  }
+.home-login-card {
+  width: 260px;
+  border: 1px solid white;
+}
