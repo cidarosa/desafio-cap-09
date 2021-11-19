@@ -15,9 +15,6 @@ p {
 .auth-form-container {
   width: 100%;
 }
-.auth-form-container h1 {
-  color: #fff;
-}
 
 @media (min-width: 576px) {
   .auth-form-container {
