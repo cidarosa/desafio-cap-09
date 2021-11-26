@@ -1,0 +1,14 @@
+.movies-container{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 30px;
+}
+
+.movies-title-container h1 {
+  color: #fff;
+  margin-bottom: 50px;
+}
+
+.movies-title-container p{
+}

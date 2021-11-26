@@ -2,8 +2,10 @@ import { useForm } from "react-hook-form";
 import ButtonIcon from 'components/ButtonIcon';
 import { getAuthData, requestBackendLogin, saveAuthData } from "util/requests";
 import { useState } from "react";
+import { useHistory } from "react-router-dom";
 
 import './styles.css';
+
 
 type FormData = {
     username: string;
@@ -15,6 +17,9 @@ const Login = () => {
     const [hasError, setHasError] = useState(false)
 
     const { register, handleSubmit, formState: { errors } } = useForm<FormData>();
+
+    const history = useHistory();
+
     const onSubmit = (formData: FormData) => {
         requestBackendLogin(formData)
             .then(response => {
@@ -23,6 +28,7 @@ const Login = () => {
                 console.log('TOKEN GERADO: ' + token);
                 setHasError(false);
                 console.log('SUCESSO', response);
+                history.push('/movies');
             })
             .catch(error => {
                 setHasError(true);
