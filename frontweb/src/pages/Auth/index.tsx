@@ -1,6 +1,7 @@
 import { ReactComponent as MainImage } from 'assets/images/auth-image.svg';
+import PrivateRoute from 'components/PrivateRoute';
+import Movies from 'pages/Movies';
 import { Route, Switch } from 'react-router';
-import { getTokenData, isAuthenticated } from 'util/requests';
 import Login from './Login';
 import './styles.css';
 
@@ -20,6 +21,9 @@ const Auth = () => {
                     <Route path="/">
                         <Login />
                     </Route>
+                    <PrivateRoute path="/movies">
+                        <Movies />
+                    </PrivateRoute>                    
                 </Switch>
             </div>
         </div>

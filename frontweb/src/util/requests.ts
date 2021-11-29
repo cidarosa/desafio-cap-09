@@ -1,9 +1,9 @@
 import axios, { AxiosRequestConfig } from "axios";
 import qs from "qs";
 import history from "./history";
-import jwtDecode from 'jwt-decode';
+import jwtDecode from "jwt-decode";
 
-export type Role = 'ROLE_VISITOR' | 'ROLE_MEMBER';
+export type Role = "ROLE_VISITOR" | "ROLE_MEMBER";
 
 export type TokenData = {
   exp: number;
@@ -73,6 +73,10 @@ export const getAuthData = () => {
   return JSON.parse(str) as LoginResponse;
 };
 
+export const removeAuthData = () => {
+  localStorage.removeItem(tokenKey);
+};
+
 // Add a request interceptor
 axios.interceptors.request.use(
   function (config) {
@@ -104,17 +108,16 @@ axios.interceptors.response.use(
   }
 );
 
-export const getTokenData = () : TokenData | undefined => {
-  try{
+export const getTokenData = (): TokenData | undefined => {
+  try {
     return jwtDecode(getAuthData().access_token) as TokenData;
-  }
-  catch (error) {
+  } catch (error) {
     return undefined;
   }
 };
 
-export const isAuthenticated = () : boolean => {
+export const isAuthenticated = (): boolean => {
   const tokenData = getTokenData();
 
-  return (tokenData && tokenData.exp * 1000 > Date.now()) ? true : false;
-}
+  return tokenData && tokenData.exp * 1000 > Date.now() ? true : false;
+};
