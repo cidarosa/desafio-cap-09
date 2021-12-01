@@ -1,3 +1,4 @@
+import { Review } from './review';
 import { Genre } from "./genre";
 
 export type Movie = {
@@ -8,5 +9,6 @@ export type Movie = {
     imgUrl: string;
     synopsis: string;
     genre: Genre;
+    reviews: Review [];
 }
 
