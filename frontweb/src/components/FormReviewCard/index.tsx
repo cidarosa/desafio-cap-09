@@ -5,7 +5,7 @@ type FormData = {
     text: string;
 }
 
-const ReviewCard = () => {
+const FormReviewCard = () => {
 
     return (
         <div className="base-card review-card">
@@ -16,7 +16,6 @@ const ReviewCard = () => {
                         type="text"
                         className="form-control base-input"
                         placeholder="Deixe sua avaliação aqui"
-
                     />
                 </div>
                 <div className="review-submit">
@@ -27,4 +26,4 @@ const ReviewCard = () => {
     );
 };
 
-export default ReviewCard;
+export default FormReviewCard;

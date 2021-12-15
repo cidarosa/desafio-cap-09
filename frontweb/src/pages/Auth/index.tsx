@@ -1,6 +1,5 @@
 import { ReactComponent as MainImage } from 'assets/images/auth-image.svg';
 import PrivateRoute from 'components/PrivateRoute';
-import Movies from 'pages/Movies';
 import { Route, Switch } from 'react-router';
 import Login from './Login';
 import './styles.css';
@@ -22,8 +21,11 @@ const Auth = () => {
                         <Login />
                     </Route>
                     <PrivateRoute path="/movies">
-                        <Movies />
-                    </PrivateRoute>                    
+                       
+                    </PrivateRoute>
+                    <PrivateRoute path="/movies/:movieId">
+                      
+                    </PrivateRoute>
                 </Switch>
             </div>
         </div>
