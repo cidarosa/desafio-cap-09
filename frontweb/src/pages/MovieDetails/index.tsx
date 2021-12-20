@@ -41,10 +41,9 @@ const MovieDetails = () => {
             
             <div className='base-card movie-form-card'>
 
-
-
                 <div className="row movie-title-container">
                     <h4>Card do Form de Avaliação</h4>
+                    <h4>Usuários MEMBER</h4>
                 </div>
 
                 <div className='base-card movie-detail-card'>

@@ -5,11 +5,25 @@
     padding: 30px;
 }
 
+
 .movies-title-container h1 {
   color: #fff;
   margin-bottom: 50px;
 }
 
 .movies-title-container p{
-  
+  color: #fff;
+}
+
+.movie-link a{
+  color: rgba(255, 255, 255, 0.5) ;
+}
+
+.movie-link a:hover{
+  color: #FFF;
+}
+
+.movie-link a.active{
+  color:#FFF ;
+  font-weight: bold;
 }

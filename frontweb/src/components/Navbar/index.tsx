@@ -5,15 +5,11 @@ import history from 'util/history';
 import { getTokenData, isAuthenticated, removeAuthData } from 'util/requests';
 import './styles.css';
 
-
-
 const Navbar = () => {
 
     const { authContextData, setAuthContextData } = useContext(AuthContext);
 
-
     useEffect(() => {
-
         if (isAuthenticated()) {
             setAuthContextData({
                 authenticated: true,
@@ -47,7 +43,7 @@ const Navbar = () => {
                     {authContextData.authenticated ? (
                         <button className="btn btn-primary btn-sm btn-exit" onClick={handleLogoutClick}>Sair</button>
                     ) : (
-                        <Link to="/">Login</Link>
+                        <Link to="/"></Link>
                     )}
 
                 </div>
