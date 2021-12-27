@@ -4,5 +4,5 @@ export type Review = {
   id: number;
   text: string;
   movieId: number;
-  userId: User;
+  user: User;
 };
