@@ -1,15 +1,17 @@
-
+/*
 import { AxiosRequestConfig } from 'axios';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Movie } from 'types/movie';
 import { SpringPage } from 'types/vendor/spring';
-import { requestBackend } from 'util/requests';
-import CardLoader from './CardLoader';
+import { requestBackend } from 'util/requests';*/
+
+import { Link } from 'react-router-dom';
+
 import './styles.css';
 
 const Movies = () => {
-
+/*
     const [page, setPage] = useState<SpringPage<Movie>>();
     const [isLoading, setIsLoading] = useState(false);
 
@@ -35,7 +37,7 @@ const Movies = () => {
             }
             );
     }, []);
-
+*/
     return (
         <div className="container my-4 movies-container">
 
@@ -57,9 +59,10 @@ const Movies = () => {
                     )
                     ))*/}
             </div>
+            {/*
             <div className="row">
                 <p>Criar Pagination</p>
-            </div>
+            </div>*/}
         </div>
     );
 };

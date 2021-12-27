@@ -3,10 +3,10 @@ import { useEffect, useState } from 'react';
 import { SpringPage } from 'types/vendor/spring';
 import { Review } from 'types/review';
 import {  requestBackend } from 'util/requests';
-
-import './styles.css';
 import FormReviewCard from 'components/FormReviewCard';
 import { hasAnyRoles } from 'util/auth';
+
+import './styles.css';
 
 const MovieDetails = () => {
 
