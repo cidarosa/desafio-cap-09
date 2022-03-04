@@ -13,7 +13,7 @@ const Movies = () => {
 
             <div className="row movie-link">
                 <NavLink to="/movies/1">Acessar /movies/1</NavLink>
-                <NavLink to="movies/2">Acessar /movies/2</NavLink>
+                <NavLink to="/movies/2">Acessar /movies/2</NavLink>
             </div>
         </div>
     );

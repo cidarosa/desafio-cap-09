@@ -1,5 +1,4 @@
 import { ReactComponent as MainImage } from 'assets/images/auth-image.svg';
-import PrivateRoute from 'components/PrivateRoute';
 import { Route, Switch } from 'react-router';
 import Login from './Login';
 
@@ -21,12 +20,12 @@ const Home = () => {
                     <Route path="/">
                         <Login />
                     </Route>
-                    <PrivateRoute path="/movies">
+                    {/* <PrivateRoute path="/movies">
                        
                     </PrivateRoute>
                     <PrivateRoute path="/movies/:movieId">
                       
-                    </PrivateRoute>
+                    </PrivateRoute> */}
                 </Switch>
             </div>
         </div>

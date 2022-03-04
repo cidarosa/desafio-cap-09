@@ -8,7 +8,7 @@ import { hasAnyRoles } from 'util/auth';
 
 import './styles.css';
 
-const MovieDetails = () => {
+const  MovieDetails = () => {
 
     const [page, setPage] = useState<SpringPage<Review>>();
     const [isLoading, setIsLoading] = useState(false);
