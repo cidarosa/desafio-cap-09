@@ -20,12 +20,7 @@ const Home = () => {
                     <Route path="/">
                         <Login />
                     </Route>
-                    {/* <PrivateRoute path="/movies">
-                       
-                    </PrivateRoute>
-                    <PrivateRoute path="/movies/:movieId">
-                      
-                    </PrivateRoute> */}
+
                 </Switch>
             </div>
         </div>

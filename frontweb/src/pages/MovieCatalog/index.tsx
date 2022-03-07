@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom';
 
 import './styles.css';
 
-const Movies = () => {
+const MovieCatalog = () => {
 
     return (
         <div className="container my-4 movies-container">
@@ -19,4 +19,4 @@ const Movies = () => {
     );
 };
 
-export default Movies;
+export default MovieCatalog;
