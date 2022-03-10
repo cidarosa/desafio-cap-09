@@ -59,8 +59,8 @@ const MovieDetails = () => {
                 </div>
 
                 <div className='base-card movie-detail-card'>
-                    <h4>TODAS avaliações do filme </h4>
-                    {/* <ReviewListing reviews={reviews} /> */}
+                    {/* <h4>TODAS avaliações do filme </h4> */}
+                    <ReviewListing reviews={reviews} />
                 </div>
 
             </div>

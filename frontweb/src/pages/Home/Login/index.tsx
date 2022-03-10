@@ -9,17 +9,14 @@ import { getTokenData } from "util/auth";
 
 import './styles.css';
 
-
 type FormData = {
     username: string;
     password: string;
 };
 
-
 type LocationState = {
     from : string;
 }
-
 
 const Login = () => {
 

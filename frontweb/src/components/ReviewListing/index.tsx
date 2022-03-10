@@ -7,9 +7,10 @@ type Props = {
 const ReviewListing = ({ reviews }: Props) => {
   return (
     <div>
-      <h1>Review Listing</h1>
-      <h4>{reviews.map((x) => x.user.name)}</h4>
-      <p>{reviews.map((x) => x.text)}</p>
+      
+      <h4>{reviews.map((review) => review.user.name)}</h4>
+      
+      <p>{reviews.map((review) => review.text)}</p>
     </div>
   );
 };
