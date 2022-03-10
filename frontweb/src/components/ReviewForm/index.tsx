@@ -3,6 +3,8 @@ import { useForm } from "react-hook-form";
 import { Review } from "types/review";
 import { requestBackend } from "util/requests";
 
+import "./styles.css";
+
 type Props = {
     movieId: string;
     onInsertReview: (review: Review) => void;

@@ -1,0 +1,22 @@
+.review-card{
+    padding: 20px;
+    margin-left: 20px;
+    border: 1px solid red;
+}
+
+.review-card input:focus {
+    color: #000;
+    background: #fefefe;
+  }
+
+  .review-card input:not(:focus) {
+    color: #000;
+    background: #fefefe;
+  }
+
+  .review-submit{
+      margin-top: 10px;
+      margin-bottom: 10px;
+  }
+
+  
