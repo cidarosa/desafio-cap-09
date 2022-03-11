@@ -2,8 +2,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding: 30px;
-    border: 1px solid red;
+    padding: 30px;   
 }
 
 .movie-details-container h1{
@@ -13,7 +12,8 @@
 }
 
 .movie-form-card{
-    color: #fff;
+    /* color: #fff; */
+    /* border: 1px solid blue; */
 }
 .movie-title-container {
     color: #fff;

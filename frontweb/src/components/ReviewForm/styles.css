@@ -1,18 +1,33 @@
-.review-card {  
+.review-card {
   padding: 20px;
   font-size: 16px;
   /* margin-left: 20px; */
   /* width: 300px; */
   border: 1px solid red;
+  margin-bottom: 30px;
 }
 
 .review-card input:focus {
-  color: #000;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  display: flex;
+  align-items: center;
+  letter-spacing: -0.015em;
+  color: #9e9e9e;
   background: #fefefe;
 }
 
 .review-card input:not(:focus) {
-  color: #000;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  display: flex;
+  align-items: center;
+  letter-spacing: -0.015em;
+  color: #9e9e9e;
   background: #fefefe;
 }
 
@@ -24,7 +39,6 @@
 @media (min-width: 576px) {
   .review-card {
     width: 550px;
-    
   }
 }
 @media (min-width: 1200px) {
