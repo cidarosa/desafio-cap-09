@@ -16,7 +16,7 @@ const ReviewCard = ({review} : Props) => {
             </div>
 
             <div className="card-reviews-container">
-                <p>{review.text}</p>
+                {review.text}
             </div>
 
         </div>
