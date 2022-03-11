@@ -1,0 +1,20 @@
+.review-card{
+    margin-bottom: 14px;
+
+}
+
+.card-user-container{
+
+    display: flex;
+    align-items: center;
+}
+
+.card-user-container h2{
+    margin-left: 15px;
+}
+
+.card-review-container{
+    padding: 10px;
+    margin-top: 10px;
+    text-align: justify;
+}

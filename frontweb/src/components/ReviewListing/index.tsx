@@ -1,3 +1,4 @@
+import ReviewCard from "components/ReviewCard";
 import { Review } from "types/review";
 
 type Props = {
@@ -6,11 +7,12 @@ type Props = {
 
 const ReviewListing = ({ reviews }: Props) => {
   return (
-    <div>
-      
-      <h4>{reviews.map((review) => review.user.name)}</h4>
-      
-      <p>{reviews.map((review) => review.text)}</p>
+    <div className="row">
+      {reviews.map((review) => (
+        <div key={review.id}>
+          <ReviewCard review={review} />
+        </div>
+      ))}
     </div>
   );
 };
