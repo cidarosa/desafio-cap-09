@@ -37,9 +37,9 @@ const MovieDetails = () => {
   };
 
   return (
-    <div className="movie-details-container">
+    <div className="base-card movie-details-container">
       <h1>Tela detalhes do filme id: {movieId}</h1>
-
+      
       <div className="movie-form-card">
         <div className="row movie-title-container">
           {hasAnyRoles(["ROLE_MEMBER"]) && (
@@ -54,7 +54,7 @@ const MovieDetails = () => {
           )}
         </div>
 
-        <div className="base-card movie-detail-card">
+        <div className="base-card movie-details-card">
           {/* <h4>TODAS avaliações do filme </h4> */}
           <ReviewListing reviews={reviews} />
         </div>

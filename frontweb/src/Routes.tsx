@@ -4,7 +4,8 @@ import MovieDetails from "pages/MovieDetails";
 import history from "util/history";
 import Home from "pages/Home";
 import PrivateRoute from "components/PrivateRoute";
-import MovieCatalog from "pages/MovieCatalog";
+import MovieList from "pages/MovieList";
+
 
 const Routes = () => (
     <Router history={history} >
@@ -15,7 +16,7 @@ const Routes = () => (
             </Route>
             <PrivateRoute path="/movies">
                 <Route path="/movies" exact>
-                    <MovieCatalog />
+                    <MovieList />
                 </Route>
                 <Route path="/movies/:movieId">
                     <MovieDetails />
