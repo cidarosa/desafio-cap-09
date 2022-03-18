@@ -4,16 +4,15 @@
   width: 300px;
   margin-bottom: 25px;
   color: #fff;
-  
 }
 
-.movie-card-img img{
+.movie-card-img img {
   margin-top: 20px;
-   width: 100%;
+  width: 100%;
 }
 
-.movie-card-data{
-    padding: 15px 15px 30px;
+.movie-card-data {
+  padding: 15px 15px 30px;
 }
 
 .movie-card-data h1 {
@@ -34,14 +33,38 @@
   mix-blend-mode: normal;
 }
 
-.movie-card-data p{
-    
-font-weight: 400;
-font-size: 14px;
-line-height: 19px;
-letter-spacing: -0.015em;
+.movie-card-data p {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+  letter-spacing: -0.015em;
 
-/* color: #FFFFFF; */
+  /* color: #FFFFFF; */
 
-mix-blend-mode: normal;
+  mix-blend-mode: normal;
+}
+
+@media (min-width: 576px) {
+  .movie-card-container {
+    width: 258px;
+  }
+ 
+}
+
+@media (min-width: 768px) {
+  .movie-card-container {
+    width: 324px;
+  }
+}
+
+@media (min-width: 992px) {
+  .movie-card-container {
+    width: 436px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .movie-card-container {
+    width: 258px;
+  }
 }

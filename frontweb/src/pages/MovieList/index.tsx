@@ -15,11 +15,8 @@ const MovieList = () => {
   };
 
   return (
-    <div className="container my-4 movies-container">
-      {/* <div className="row movies-title-container">
-        <h1>Tela listagem de filmes</h1>
-      </div> */}
-
+    <div className="container movies-container">
+  
       <div className="base-card movie-filter-container">Search filter</div>
 
       <div className="row">
