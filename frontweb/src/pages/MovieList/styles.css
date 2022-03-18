@@ -2,13 +2,21 @@
   display: flex;
   flex-direction: column;
   text-align: left;
-  padding: 15px;
+  padding: 10px;
+  color: #fff;
+  border: 1px solid blue;
 }
 
-.movies-title-container h1 {
+.movie-filter-container{
+  padding: 15px;
+  margin-bottom: 20px;
+  flex: 1;
+}
+
+/* .movies-title-container h1 {
   color: #fff;
   margin-bottom: 40px;
-}
+} */
 
 .movie-link a {
   font-size: 18px;

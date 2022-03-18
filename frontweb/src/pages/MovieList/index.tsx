@@ -16,16 +16,25 @@ const MovieList = () => {
 
   return (
     <div className="container my-4 movies-container">
-      <div className="row movies-title-container">
+      {/* <div className="row movies-title-container">
         <h1>Tela listagem de filmes</h1>
-      </div>
+      </div> */}
 
-      <div>
-        <p>Card Search filter</p>
-      </div>
+      <div className="base-card movie-filter-container">Search filter</div>
 
-      <div>
-        <MovieCard movie={movie} />
+      <div className="row">
+        <div className="col-sm-6 col-xl-3">
+          <MovieCard movie={movie} />
+        </div>
+        <div className="col-sm-6 col-xl-3">
+          <MovieCard movie={movie} />
+        </div>
+        <div className="col-sm-6 col-xl-3">
+          <MovieCard movie={movie} />
+        </div>
+        <div className="col-sm-6 col-xl-3">
+          <MovieCard movie={movie} />
+        </div>
       </div>
 
       <div className="row movie-link">
