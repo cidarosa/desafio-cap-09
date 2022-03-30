@@ -11,10 +11,10 @@ type Props = {
   onInsertReview: (review: Review) => void;
 };
 
-type ReviewData = {
+/* type ReviewData = {
   movieId: number;
   text: string;
-};
+}; */
 
 const ReviewForm = ({ movieId, onInsertReview }: Props) => {
   const {
@@ -22,9 +22,9 @@ const ReviewForm = ({ movieId, onInsertReview }: Props) => {
     handleSubmit,
     formState: { errors },
     setValue,
-  } = useForm<ReviewData>();
+  } = useForm<Review>();
 
-  const onSubmit = (formData: ReviewData) => {
+  const onSubmit = (formData: Review) => {
     formData.movieId = parseInt(movieId);
 
     const config: AxiosRequestConfig = {
