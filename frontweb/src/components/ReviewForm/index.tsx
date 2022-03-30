@@ -11,7 +11,7 @@ type Props = {
   onInsertReview: (review: Review) => void;
 };
 
-type FormData = {
+type ReviewData = {
   movieId: number;
   text: string;
 };
@@ -22,9 +22,9 @@ const ReviewForm = ({ movieId, onInsertReview }: Props) => {
     handleSubmit,
     formState: { errors },
     setValue,
-  } = useForm<FormData>();
+  } = useForm<ReviewData>();
 
-  const onSubmit = (formData: FormData) => {
+  const onSubmit = (formData: ReviewData) => {
     formData.movieId = parseInt(movieId);
 
     const config: AxiosRequestConfig = {
@@ -57,7 +57,7 @@ const ReviewForm = ({ movieId, onInsertReview }: Props) => {
             className="form-control base-input"
             placeholder="Deixe sua avaliação aqui"
           />
-          <div>{errors.text?.message}</div>
+          <div className="invalid-feedback d-block">{errors.text?.message}</div>
         </div>
         <div className="mb-8 review-submit">
           <ButtonIcon text="SALVAR AVALIAÇÃO" />
