@@ -1,13 +1,14 @@
 .reviews-card {
   margin-bottom: 15px;
-  /* border: 1px solid yellow; */
-  padding: 10px;  
+  border: 1px solid yellow;
+  padding: 10px;
+  /* width: 300px  ; */
   
 }
 
 .card-user-container {
   display: flex;
-  align-items: center;
+  align-items: center; 
 }
 
 .card-user-container svg {
