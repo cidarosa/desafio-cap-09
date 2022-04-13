@@ -11,33 +11,22 @@ import Select from "react-select";
 import "./styles.css";
 
 const MovieList = () => {
-  // provisório
-  /* const movie = {
-    id: 1,
-    title: "Bob Esponja",
-    subTitle: "O Incrível Resgate",
-    year: 2020,
-    imgUrl:
-      "https://image.tmdb.org/t/p/w533_and_h300_bestv2/wu1uilmhM4TdluKi2ytfz8gidHf.jpg",
-  }; */
-
+  
   const [page, setPage] = useState<SpringPage<Movie>>();
 
-   const options = [
-    { value: 'chocolate', label: 'Chocolate' },
-    { value: 'strawberry', label: 'Strawberry' },
-    { value: 'vanilla', label: 'Vanilla' },
-  ];
-
   // //carregar lista de genre do back-end
-  // const [selectGenres, setSelectGenres] = useState<Genre[]>([]);
+  const [selectGenres, setSelectGenres] = useState<Genre[]>([]);
 
   // //buscar da API os genres e armazenra no selectGenres
-  // useEffect(() => {
-  //   requestBackend({ url: "/genres" }).then((response) => {
-  //     setSelectGenres(response.data.content);
-  //   });
-  // }, []);
+  useEffect(() => {
+    const config: AxiosRequestConfig = {
+      url: "/genres",
+      withCredentials: true,
+    };
+    requestBackend(config).then((response) => {
+      setSelectGenres(response.data);
+    });
+  }, []);
 
   useEffect(() => {
     const config: AxiosRequestConfig = {
@@ -69,11 +58,12 @@ const MovieList = () => {
               getOptionValue={(genre: Genre) => String(genre.id)}
             />
           </div> */}
-          <Select 
+          <Select
             classNamePrefix={"genre-select"}
-            options={options}            
+            options={selectGenres}
+            getOptionLabel={(genre: Genre) => genre.name}
+            getOptionValue={(genre: Genre) => String(genre.id)}
           />
-
         </form>
       </div>
 
