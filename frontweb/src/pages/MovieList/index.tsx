@@ -9,9 +9,9 @@ import { requestBackend } from "util/requests";
 import Select from "react-select";
 
 import "./styles.css";
+import Pagination from "components/Pagination";
 
 const MovieList = () => {
-  
   const [page, setPage] = useState<SpringPage<Movie>>();
 
   // //carregar lista de genre do back-end
@@ -47,24 +47,18 @@ const MovieList = () => {
   return (
     <div className="container movies-container">
       <div className="base-card movie-filter-container">
-        Search filter
-        <form>
-          {/* <div>
+        {/* Search filter */}
+
+        <div className="movie-filter-select">
+          <form>
             <Select
+              classNamePrefix={"genre-select"}
               options={selectGenres}
-              classNamePrefix="genre_select"
-              isMulti
               getOptionLabel={(genre: Genre) => genre.name}
               getOptionValue={(genre: Genre) => String(genre.id)}
             />
-          </div> */}
-          <Select
-            classNamePrefix={"genre-select"}
-            options={selectGenres}
-            getOptionLabel={(genre: Genre) => genre.name}
-            getOptionValue={(genre: Genre) => String(genre.id)}
-          />
-        </form>
+          </form>
+        </div>
       </div>
 
       <div className="row">
@@ -94,6 +88,9 @@ const MovieList = () => {
         <NavLink to="/movies/1">Acessar /movies/1</NavLink>
         <NavLink to="/movies/2">Acessar /movies/2</NavLink>
       </div> */}
+
+      <Pagination />
+
     </div>
   );
 };

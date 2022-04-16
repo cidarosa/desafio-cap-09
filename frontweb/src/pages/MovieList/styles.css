@@ -13,6 +13,11 @@
   /* flex: 1; */
 }
 
+.movie-filter-select{
+  border: 1px solid green;
+  width: 260px;
+}
+
 .genre-select__control {
   font-size: 1em;
   letter-spacing: -0.015em;
