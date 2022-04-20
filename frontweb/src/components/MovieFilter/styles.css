@@ -26,6 +26,11 @@
     color: #fff !important;
     
   }
+
+  .genre-select__menu {
+    color: red;
+    background-color: #6C6C6C !important;
+  }
   
   .genre-select__indicator-separator {
     display: none;
