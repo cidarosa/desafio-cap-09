@@ -2,45 +2,24 @@ import { AxiosRequestConfig } from "axios";
 import MovieCard from "components/MovieCard";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { Genre } from "types/genre";
 import { Movie } from "types/movie";
 import { SpringPage } from "types/vendor/spring";
 import { requestBackend } from "util/requests";
-import Select from "react-select";
+import MovieFilter from "components/MovieFilter";
 import Pagination from "components/Pagination";
 
 import "./styles.css";
-import MovieFilter from "components/MovieFilter";
 
 const MovieList = () => {
   const [page, setPage] = useState<SpringPage<Movie>>();
 
-  // //carregar lista de genre do back-end
-  // const [selectGenres, setSelectGenres] = useState<Genre[]>([]);
-
-  // //buscar da API os genres e armazenra no selectGenres
-  // useEffect(() => {
-  //   const config: AxiosRequestConfig = {
-  //     url: "/genres",
-  //     withCredentials: true,
-  //   };
-  //   requestBackend(config).then((response) => {
-  //     setSelectGenres(response.data);
-  //   });
-  // }, []);
-
- 
-  useEffect(() => {
-    getMovies();
-  }, []);
-
-  const getMovies = () => {
+  const getMovies = (pageNumber: number) => {
     const config: AxiosRequestConfig = {
       method: "GET",
       url: "/movies",
       withCredentials: true,
       params: {
-        page: 0,
+        page: pageNumber,
         size: 12,
       },
     };
@@ -48,7 +27,11 @@ const MovieList = () => {
     requestBackend(config).then((response) => {
       setPage(response.data);
     });
-  }
+  };
+
+  useEffect(() => {
+    getMovies(0);
+  }, []);
 
   return (
     <div className="container movies-container">
@@ -66,7 +49,11 @@ const MovieList = () => {
         ))}
       </div>
 
-      <Pagination pageCount={page ? page.totalPages : 0} range={3} />
+      <Pagination
+        pageCount={page ? page.totalPages : 0}
+        range={3}
+        onChange={getMovies}
+      />
     </div>
   );
 };
