@@ -1,0 +1,33 @@
+.movie-filter-select{
+    border: 1px solid green;
+    width: 260px;
+  }
+
+  
+.genre-select__control {
+    font-size: 1em;
+    letter-spacing: -0.015em;
+    color: #fefefe;
+    height: 50px;
+    background: #6c6c6c !important;
+    border: 1px solid #e1e1e1 !important;
+    border-radius: 4px !important;
+  }
+  
+  .genre-select__placeholder {
+    color: #fff !important;
+  }
+  
+  .genre-select__single-value {
+    color: #fff !important;
+  }
+  
+  .genre-select__value-container {
+    color: #fff !important;
+    
+  }
+  
+  .genre-select__indicator-separator {
+    display: none;
+  }
+  

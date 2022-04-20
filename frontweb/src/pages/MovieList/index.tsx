@@ -7,9 +7,10 @@ import { Movie } from "types/movie";
 import { SpringPage } from "types/vendor/spring";
 import { requestBackend } from "util/requests";
 import Select from "react-select";
+import Pagination from "components/Pagination";
 
 import "./styles.css";
-import Pagination from "components/Pagination";
+import MovieFilter from "components/MovieFilter";
 
 const MovieList = () => {
   const [page, setPage] = useState<SpringPage<Movie>>();
@@ -27,6 +28,7 @@ const MovieList = () => {
       setSelectGenres(response.data);
     });
   }, []);
+  
 
   useEffect(() => {
     const config: AxiosRequestConfig = {
@@ -35,7 +37,7 @@ const MovieList = () => {
       withCredentials: true,
       params: {
         page: 0,
-        size: 20,
+        size: 12,
       },
     };
 
@@ -48,8 +50,9 @@ const MovieList = () => {
     <div className="container movies-container">
       <div className="base-card movie-filter-container">
         {/* Search filter */}
+        <MovieFilter />
 
-        <div className="movie-filter-select">
+        {/* <div className="movie-filter-select">
           <form>
             <Select
               classNamePrefix={"genre-select"}
@@ -58,7 +61,7 @@ const MovieList = () => {
               getOptionValue={(genre: Genre) => String(genre.id)}
             />
           </form>
-        </div>
+        </div> */}
       </div>
 
       <div className="row">
@@ -69,28 +72,10 @@ const MovieList = () => {
             </Link>
           </div>
         ))}
-
-        {/* <div className="col-sm-6 col-xl-3">
-          <MovieCard movie={movie} />
-        </div>
-        <div className="col-sm-6 col-xl-3">
-          <MovieCard movie={movie} />
-        </div>
-        <div className="col-sm-6 col-xl-3">
-          <MovieCard movie={movie} />
-        </div>
-        <div className="col-sm-6 col-xl-3">
-          <MovieCard movie={movie} />
-        </div> */}
       </div>
 
-      {/* <div className="row movie-link">
-        <NavLink to="/movies/1">Acessar /movies/1</NavLink>
-        <NavLink to="/movies/2">Acessar /movies/2</NavLink>
-      </div> */}
-
-      <Pagination />
-
+      <Pagination pageCount={page ? page.totalPages : 0} range={3}
+       />
     </div>
   );
 };
