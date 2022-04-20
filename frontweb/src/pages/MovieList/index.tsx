@@ -1,6 +1,6 @@
 import { AxiosRequestConfig } from "axios";
 import MovieCard from "components/MovieCard";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Movie } from "types/movie";
 import { SpringPage } from "types/vendor/spring";
@@ -10,28 +10,43 @@ import Pagination from "components/Pagination";
 
 import "./styles.css";
 
+// guardar estado dos controles - paginação e filtragem
+type ControlComponentsData = {
+  activePage: number; //indica qual página está ativa, vem do comp. paginação
+};
+
 const MovieList = () => {
   const [page, setPage] = useState<SpringPage<Movie>>();
 
-  const getMovies = (pageNumber: number) => {
+  //estado paginação e filtragem
+  const [controlComponentsData, setControlComponentsData] =
+    useState<ControlComponentsData>({
+      activePage: 0,
+    });
+
+  const handlePageChange = (pageNumber: number) => {
+    setControlComponentsData({ activePage: pageNumber });
+  };
+
+  const getMovies = useCallback(() => {
     const config: AxiosRequestConfig = {
       method: "GET",
       url: "/movies",
       withCredentials: true,
       params: {
-        page: pageNumber,
-        size: 12,
+        page: controlComponentsData.activePage,
+        size: 3,
       },
     };
 
     requestBackend(config).then((response) => {
       setPage(response.data);
     });
-  };
+  }, [controlComponentsData]);
 
   useEffect(() => {
-    getMovies(0);
-  }, []);
+    getMovies();
+  }, [getMovies]);
 
   return (
     <div className="container movies-container">
@@ -52,7 +67,7 @@ const MovieList = () => {
       <Pagination
         pageCount={page ? page.totalPages : 0}
         range={3}
-        onChange={getMovies}
+        onChange={handlePageChange}
       />
     </div>
   );
