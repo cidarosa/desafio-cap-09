@@ -7,18 +7,33 @@ import { requestBackend } from "util/requests";
 
 import "./styles.css";
 
-type MovieFilterData = {
-  genre: Genre;
+export type MovieFilterData = {
+  genre: Genre | null; //recebe tipo Genre or null
 };
 
-const MovieFilter = () => {
+type Props = {
+  onSubmitFilter: (data: MovieFilterData) => void;
+};
+
+const MovieFilter = ({onSubmitFilter}:Props) => {
   // //carregar lista de genre do back-end
   const [selectGenres, setSelectGenres] = useState<Genre[]>([]);
 
-  const { handleSubmit, control } = useForm<MovieFilterData>();
+  const { handleSubmit, control, setValue, getValues } =
+    useForm<MovieFilterData>();
 
   const onSubmit = (formData: MovieFilterData) => {
     console.log("Enviou", formData);
+  };
+
+  const handleChangeGenre = (value: Genre) => {
+    setValue("genre", value); //set novo valor de genre
+    //envia os dados do form com o novo valor
+    const obj: MovieFilterData = {
+      genre: getValues("genre"),
+    };
+
+    onSubmitFilter(obj);
   };
 
   // //buscar da API os genres e armazenra no selectGenres
@@ -45,6 +60,7 @@ const MovieFilter = () => {
                 options={selectGenres}
                 isClearable
                 classNamePrefix={"genre-select"}
+                onChange={(value) => handleChangeGenre(value as Genre)}
                 getOptionLabel={(genre: Genre) => genre.name}
                 getOptionValue={(genre: Genre) => String(genre.id)}
               />

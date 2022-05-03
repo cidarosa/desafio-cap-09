@@ -1,7 +1,7 @@
 .movie-filter-select{
     border: 1px solid green;
     width: 260px;
-  }
+      }
 
   
 .genre-select__control {
@@ -35,4 +35,8 @@
   .genre-select__indicator-separator {
     display: none;
   }
+
+.genre-select__dropdown-indicator{
+  color: #fff !important;
+}
   
