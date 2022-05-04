@@ -48,7 +48,7 @@ const MovieFilter = ({onSubmitFilter}:Props) => {
   }, []);
 
   return (
-    <div>
+    <div className="container">
       <div className="movie-filter-select">
         <form onSubmit={handleSubmit(onSubmit)}>
           <Controller

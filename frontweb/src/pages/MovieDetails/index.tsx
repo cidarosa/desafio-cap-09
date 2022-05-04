@@ -8,6 +8,7 @@ import { useParams } from "react-router-dom";
 import ReviewListing from "components/ReviewListing";
 
 import "./styles.css";
+import MovieCardFull from "components/MovieCardFull";
 
 type urlParams = {
   movieId: string;
@@ -38,29 +39,23 @@ const MovieDetails = () => {
 
   return (
     <div className="base-card movie-details-container">
-      <h1>Tela detalhes do filme id: {movieId}</h1>
-      <h2>Imagem do filme</h2>
-      <h2>Título do filme</h2>
-      <h2>Ano</h2>
-      <h2>Subtitule</h2>
-      <h2>Sinopse</h2>
-      
+      <div className="movie-details-info">
+        <MovieCardFull movieId={movieId} />
+      </div>
+
       <div className="movie-form-card">
         <div className="row movie-title-container">
           {hasAnyRoles(["ROLE_MEMBER"]) && (
             <>
-              {/* <h4>Card do Form de Avaliação</h4> */}
               <ReviewForm
                 movieId={movieId}
                 onInsertReview={handleInsertReview}
               />
-              {/* <h4>Usuários MEMBER</h4> */}
             </>
           )}
         </div>
 
         <div className="base-card movie-details-card">
-          {/* <h4>TODAS avaliações do filme </h4> */}
           <ReviewListing reviews={reviews} />
         </div>
       </div>

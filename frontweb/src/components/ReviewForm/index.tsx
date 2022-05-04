@@ -3,6 +3,7 @@ import ButtonIcon from "components/ButtonIcon";
 import { useForm } from "react-hook-form";
 import { Review } from "types/review";
 import { requestBackend } from "util/requests";
+import { toast } from "react-toastify";
 
 import "./styles.css";
 
@@ -11,10 +12,6 @@ type Props = {
   onInsertReview: (review: Review) => void;
 };
 
-/* type ReviewData = {
-  movieId: number;
-  text: string;
-}; */
 
 const ReviewForm = ({ movieId, onInsertReview }: Props) => {
   const {
@@ -37,10 +34,12 @@ const ReviewForm = ({ movieId, onInsertReview }: Props) => {
       .then((response) => {
         setValue("text", "");
         onInsertReview(response.data);
-        console.log("SUCESSO AO SALVAR", response);
+        toast.info("Review cadastrado com sucesso!");
+        // console.log("SUCESSO AO SALVAR", response);
       })
       .catch((error) => {
-        console.log("ERROR AO SALVAR", error);
+        toast.error("Erro ao cadastrar Review");
+        // console.log("ERROR AO SALVAR", error);
       });
   };
 

@@ -1,8 +1,8 @@
 .reviews-card {
   margin-bottom: 15px;
-  border: 1px solid yellow;
   padding: 10px;
-  /* width: 300px  ; */
+  width: 300px  ;
+  border: 1px solid rebeccapurple;
   
 }
 
@@ -31,7 +31,6 @@
 
 .card-reviews-container {
   padding: 10px;
-  /* width: 280px; */
   margin-top: 10px;
   text-align: justify;
   font-weight: 400;
@@ -43,15 +42,3 @@
   box-sizing: border-box;
   border-radius: 4px;
 }
-
-/* @media (min-width: 576px) {
-  .reviews-card {
-    width: 550px;
-  }
-}
-@media (min-width: 1200px) {
-  .reviews-card {
-    width: 1120px;
-  }
-}
- */
