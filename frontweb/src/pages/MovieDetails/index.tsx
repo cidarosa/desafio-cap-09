@@ -55,7 +55,7 @@ const MovieDetails = () => {
           )}
         </div>
 
-        <div className="base-card movie-details-card">
+        <div className="movie-details-card">
           <ReviewListing reviews={reviews} />
         </div>
       </div>

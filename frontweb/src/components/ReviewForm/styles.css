@@ -3,7 +3,6 @@
   font-size: 16px;
   width: 300px;
   margin-bottom: 30px;
-  border: 1px solid red;
 }
 
 .review-card input:focus {
@@ -35,14 +34,33 @@
   margin-bottom: 10px;
 }
 
-
 @media (min-width: 576px) {
   .review-card {
-    width: 550px;
+    width: 536px;
+  }
+}
+@media (min-width: 768px) {
+  .review-card {
+    width: 688px;
+  }
+}
+@media (min-width: 992px) {
+  .review-card {
+    width: 912px;
+  }
+
+  .review-submit {
+    width: 400px;
   }
 }
 @media (min-width: 1200px) {
   .review-card {
     width: 1120px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .review-card {
+    margin-left: 130px;
   }
 }

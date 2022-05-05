@@ -6,7 +6,6 @@
 }
 
 .movie-details-info {
-  border: 1px solid white;
   width: 300px;
   height: 650px;
   padding: 10px;
@@ -26,20 +25,31 @@
 @media (min-width: 768px) {
   .movie-details-info {
     width: 688px;
+    height: 800px;
   }
 }
 
 @media (min-width: 992px) {
   .movie-details-info {
     width: 912px;
+    height: 700px;
+  }
+
+  .movie-form-card{
+    align-items: center;
   }
 }
 
 @media (min-width: 1200px) {
-
-
   .movie-details-info {
     flex-direction: row;
     width: 1120px;
+    height: 510px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .movie-details-info {
+    margin-left: 130px;
   }
 }
